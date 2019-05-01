@@ -1,0 +1,10 @@
+<h1>Seja bem vindo! <%= @name %></h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+
+<h3>Você está em ambiente de <%= my_environment 'br' %></h3>
+
+<%= render "users" %>
+
+<%= @welcome_text %>
+
+<p><%= link_to 'Criar uma nova moeda.', coins_path %></p>
