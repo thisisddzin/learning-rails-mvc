@@ -6,20 +6,4 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# order: title | acronym | image_url
-coins_list = [
-  ["Bitcoin", "BTC", "http://pngimg.com/uploads/bitcoin/bitcoin_PNG47.png"],
-  ["Ethereum", "ETH", "https://banner2.kisspng.com/20180330/wae/kisspng-ethereum-bitcoin-cryptocurrency-logo-tether-bitcoin-5abdfe01b6f4b4.2459439115224007697494.jpg"],
-  ["Ripple", "XRP", "https://cdn4.iconfinder.com/data/icons/crypto-currency-and-coin-2/256/ripple_xrp_coin-512.png"],
-  ["Litecoin", "LTC", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LTC-400.png/220px-LTC-400.png"],
-  ["Binance Coin", "BNB", "https://assets.coingecko.com/coins/images/825/large/binance-coin-logo.png"],
-  ["Tether", "USDT", "http://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/1024/Tether-USDT-icon.png"],
-]
 
-coins_list.each do |title, acronym, image_url|
-  Coin.find_or_create_by!(
-    title: title,
-    acronym: acronym,
-    image_url: image_url
-  )
-end
