@@ -1,5 +1,4 @@
 <h1>Seja bem vindo! <%= @name %></h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
 
 <h3>Você está em ambiente de <%= my_environment 'br' %></h3>
 
@@ -7,5 +6,15 @@
 
 <%= @welcome_text %>
 
-<p><%= link_to 'Criar uma nova moeda.', coins_path %></p>
-<p><%= link_to 'Criar um novo tipo de mineração.', mining_types_path %></p>
+<div class="jumbotron">
+    <h1 class="display-4">Seja bem vindo! <%= @name %></h1>
+    <p class="lead">Você está em ambiente de <%= my_environment 'br' %></p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+
+
+
+    <%= link_to 'Criar uma nova moeda.', new_coin_path, class:"btn btn-primary btn-md"  %>
+
+    <%= link_to 'Criar um novo tipo de mineração.', new_mining_type_path, class:"btn btn-primary btn-md"  %>
+</div>

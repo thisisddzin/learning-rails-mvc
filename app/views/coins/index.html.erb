@@ -2,32 +2,33 @@
 
 <strong><%= date_format Date.today, 'br' %></strong>
 
-<h1>Coins</h1>
+<h1><%= Coin.model_name.human(count: @coins.count)  %></h1>
 
-<table>
+<table class="table table-hover table-dark">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Acronym</th>
-      <th>Image url</th>
-      <th colspan="3"></th>
+      <th scope="col">#</th>
+      <th scope="col"><%= Coin.human_attribute_name(:title) %></th>
+      <th scope="col"><%= Coin.human_attribute_name(:acronyum) %></th>
+      <th scope="col"><%= Coin.human_attribute_name(:image_url) %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @coins.each do |coin| %>
-      <tr>
-        <td><%= coin.title %></td>
-        <td><%= coin.acronym %></td>
-        <td><%= image_tag coin.image_url %></td>
-        <td><%= link_to 'Show', coin %></td>
-        <td><%= link_to 'Edit', edit_coin_path(coin) %></td>
-        <td><%= link_to 'Destroy', coin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <tr>
+      <th scope="row"><%= coin.id %></th>
+      <td><%= coin.title %></td>
+      <td><%= coin.acronym %></td>
+      <td><%= image_tag coin.image_url %></td>
+      <td><%= link_to t("crud.new"),    coin, class: "badge badge-success" %></td>
+      <td><%= link_to t("crud.show"),   edit_coin_path(coin), class: "badge badge-primary" %></td>
+      <td>
+        <%= link_to t("crud.destroy"),coin, method: :delete, data: { confirm: 'Are you sure?' }, class: "badge badge-danger" %>
+      </td>
+      <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Coin', new_coin_path %>
+<%= link_to t('crud.coin.new'), new_coin_path, class:"btn btn-success" %>

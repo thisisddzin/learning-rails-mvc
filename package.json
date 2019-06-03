@@ -1,5 +1,15 @@
 {
   "name": "first_project",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0"
+  },
+  "version": "1.0.0",
+  "description": "Crypto Wallet",
+  "main": "index.js",
+  "repository": "https://github.com/adenilson-santos/learning-rails-mvc.git",
+  "author": "Adenilson Santos <adenilson.santos@gocase.com.br>",
+  "license": "MIT"
 }

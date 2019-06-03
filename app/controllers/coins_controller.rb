@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class CoinsController < ApplicationController
-  layout 'adm'
   before_action :set_coin, only: %i[show edit update destroy]
 
   # GET /coins
@@ -71,6 +70,6 @@ class CoinsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def coin_params
-    params.require(:coin).permit(:title, :acronym, :image_url)
+    params.require(:coin).permit(:title, :acronym, :image_url, :mining_type_id)
   end
 end

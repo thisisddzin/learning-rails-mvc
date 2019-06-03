@@ -1,29 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Mining Types</h1>
-
-<table>
+<h1><%= MiningType.model_name.human(count: @mining_types.count) %></h1>
+<table class="table table-hover table-dark">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Acronym</th>
-      <th colspan="3"></th>
+      <th scope="col">#</th>
+      <th scope="col"><%= MiningType.human_attribute_name(:title) %></th>
+      <th scope="col"><%= MiningType.human_attribute_name(:acronyum) %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @mining_types.each do |mining_type| %>
-      <tr>
-        <td><%= mining_type.title %></td>
-        <td><%= mining_type.acronym %></td>
-        <td><%= link_to 'Show', mining_type %></td>
-        <td><%= link_to 'Edit', edit_mining_type_path(mining_type) %></td>
-        <td><%= link_to 'Destroy', mining_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <tr>
+      <th scope="row"><%= mining_type.id %></th>
+      <td><%= mining_type.title %></td>
+      <td><%= mining_type.acronym %></td>
+      <td><%= link_to t("crud.new"),      mining_type, class: "badge badge-success" %></td>
+      <td><%= link_to t("crud.show"),     edit_mining_type_path(mining_type), class: "badge badge-primary" %></td>
+      <td>
+        <%= link_to t("crud.destroy"),  mining_type, method: :delete, data: { confirm: 'Are you sure?' }, class: "badge badge-danger" %>
+      </td>
+      <% end %>
   </tbody>
 </table>
 
+
 <br>
 
-<%= link_to 'New Mining Type', new_mining_type_path %>
+<%= link_to t('crud.mining_type.new'), new_mining_type_path, class: "btn btn-success" %>

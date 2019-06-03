@@ -3,16 +3,12 @@ require 'tty-spinner'
 namespace :dev do
   desc "Recriando banco do 0."
   task setup: :environment do
-    if Rails.env.development?
-      show_spinner('Apagando banco de dados ...') { %x(rails db:drop) }
-      show_spinner('Criando banco de dados ...') { %x(rails db:create) }
-      show_spinner('Executando migração de tabelas ...') { %x(rails db:migrate) }
-      puts "Iniciando seeds by task ..."
-      %x(rails dev:add_mining_types)
-      %x(rails dev:add_coins)
-    else
-      puts "Você precisa estar em ambiente de desenvolvimento."
-    end
+    show_spinner('Apagando banco de dados ...') { %x(rails db:drop) }
+    show_spinner('Criando banco de dados ...') { %x(rails db:create) }
+    show_spinner('Executando migração de tabelas ...') { %x(rails db:migrate) }
+    puts "Iniciando seeds by task ..."
+    %x(rails dev:add_mining_types)
+    %x(rails dev:add_coins)
   end
 
   desc "Criando moedas."

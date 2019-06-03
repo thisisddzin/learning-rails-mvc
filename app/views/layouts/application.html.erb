@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>FirstProject</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>Crypto Wallet</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
-  <nav>
-    <h1>Melhor Site de Moedas Eletronicas.</h1>
-    <ul>
-      <li>Início</li>
-      <li>Coins</li>
-      <li>Ajuda</li>
-    </ul>
-  </nav>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag    params[:controller], media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag params[:controller], 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <%= render "partials/nav", title: "aaa" %>
+  <div class="container-fluid bg-all">
     <%= yield %>
-  </body>
+  </div>
+
+</body>
+
 </html>

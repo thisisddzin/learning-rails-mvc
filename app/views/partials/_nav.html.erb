@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">CryptoWallet</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/coins"><%= Coin.model_name.human(count:2) %></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/mining_types"><%= MiningType.model_name.human(count:2) %></a>
+            </li>
+        </ul>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item <%= locale == :"pt-BR" ? "active" : ""  %>">
+                <%= link_to  "Português", "?locale=pt-BR", class:"nav-link" %>
+            </li>
+            <li class="nav-item <%= locale == :en ? "active" : ""  %>">
+                <%= link_to  "English", "?locale=en", class:"nav-link" %>
+            </li>
+        </ul>
+        <form class="form-inline">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">@</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                    aria-describedby="basic-addon1">
+            </div>
+        </form>
+    </div>
+</nav>

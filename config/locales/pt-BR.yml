@@ -1,0 +1,25 @@
+"pt-BR":
+  activerecord:
+    models:
+      coin: 
+        one: "Moeda"
+        other: "Moedas"
+      mining_type: 
+        one: "Tipo de mineração"
+        other: Tipos de mineração
+    attributes:
+      coin:
+        title: "Título"
+        acronyum: "Sigla"
+        image_url: "Url da Imagem"
+      mining_type:
+        title: "Título"
+        acronyum: "Sigla"
+  crud:
+    coin:
+      new: "Nova moeda"
+    mining_type: 
+      new: "Novo tipo de mineração"
+    new: "Novo"
+    show: "Mostrar"
+    destroy: "Deletar"
